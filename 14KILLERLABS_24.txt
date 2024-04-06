@@ -381,23 +381,28 @@ hostname R1
 int e1/2
 ip add 209.165.200.225 255.255.255.252
 int e1/3
-ip add 209.165.22.130 255.255.255.252
+ip add 209.165.202.129 255.255.255.252
 
 @r2/isp2: As120
 config t
 hostname Isp2/R2
 int e1/3
 ip add 209.165.200.226 255.255.255.252
+no shut
 int e1/2
 ip add 209.165.200.230 255.255.255.252
+no shut
+
 
 @r3/isp3:  AS130
 config t
 hostname Isp3/R3
 int e1/2
 ip add 209.165.200.229 255.255.255.252
+no shut
 int e1/3
 ip add 209.165.22.129 255.255.255.252
+no shut
 
 Tasks
 
@@ -1355,4 +1360,5 @@ On R20:  -- @I1
 R20#  
 ping vrf CORP 10.100.1.1 source e1/3.101
 !!!!!
+
 
